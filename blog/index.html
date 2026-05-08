@@ -26,7 +26,7 @@
       <p class="tagline" id="blog-tagline">I'll post notes on my research projects and related topics here.</p>
 
       <ul class="post-list" id="post-list"></ul>
-      <p id="no-posts" class="muted">No posts yet.</p>
+      <p id="no-posts" class="muted">No notes yet.</p>
     </section>
   </main>
 
@@ -42,10 +42,10 @@
       document.getElementById('blog-title').textContent = tag;
       const tagline = document.getElementById('blog-tagline');
       tagline.textContent = '';
-      const prefix = document.createTextNode('Posts tagged "' + tag + '" — ');
+      const prefix = document.createTextNode('Notes tagged "' + tag + '" — ');
       const link = document.createElement('a');
       link.href = './';
-      link.textContent = 'see all posts';
+      link.textContent = 'see all notes';
       tagline.appendChild(prefix);
       tagline.appendChild(link);
       let visible = 0;

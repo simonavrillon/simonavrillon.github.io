@@ -189,7 +189,8 @@ a:hover { text-decoration: underline; }
   margin-top: 0.5rem;
 }
 
-.tile-links a {
+.tile-links a,
+.tile-links span {
   font-size: 0.85rem;
   color: var(--muted);
 }
