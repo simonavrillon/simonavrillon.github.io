@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Avrillon — Blog</title>
+  <meta name="description" content="Notes on motor unit analysis, HD-EMG, and open-source research tooling.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236fa8ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="../" class="brand">Simon Avrillon</a>
+      <ul class="nav-links">
+        <li><a href="../#research">Research</a></li>
+        <li><a href="../#code">Code</a></li>
+        <li><a href="./">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="blog">
+    <section>
+      <h1 id="blog-title">Blog</h1>
+      <p class="tagline" id="blog-tagline">Notes on motor unit analysis, HD-EMG, and open-source research tooling.</p>
+
+      <ul class="post-list" id="post-list"></ul>
+      <p id="no-posts" class="muted">No posts yet.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Simon Avrillon · <a href="https://github.com/simonavrillon/simonavrillon.github.io">Source</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const tag = new URLSearchParams(window.location.search).get('tag');
+    if (tag) {
+      document.getElementById('blog-title').textContent = tag;
+      const tagline = document.getElementById('blog-tagline');
+      tagline.textContent = '';
+      const prefix = document.createTextNode('Posts tagged "' + tag + '" — ');
+      const link = document.createElement('a');
+      link.href = './';
+      link.textContent = 'see all posts';
+      tagline.appendChild(prefix);
+      tagline.appendChild(link);
+      let visible = 0;
+      document.querySelectorAll('#post-list li').forEach(li => {
+        const tags = (li.dataset.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+        if (tags.includes(tag)) {
+          visible++;
+        } else {
+          li.hidden = true;
+        }
+      });
+      if (visible === 0) document.getElementById('no-posts').hidden = false;
+    }
+  </script>
+</body>
+</html>

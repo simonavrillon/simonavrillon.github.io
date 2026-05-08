@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Avrillon</title>
+    <meta
+      name="description"
+      content="Simon Avrillon — researcher in neuromuscular physiology. Open-source tools for high-density EMG and motor unit analysis."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236fa8ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <a href="/" class="brand">Simon Avrillon</a>
+        <ul class="nav-links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#code">Code</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="research">
+        <h2>Research</h2>
+        <p>
+          I'm studying how the nervous system makes our body move to design innovative solutions
+          that help people recover lost skills. To do so: I track the spiking activity of large
+          populations of motor units during controlled and natural behaviours (1); I develop neural
+          interface-based training where participants progressively learn to modulate their motor
+          unit activity in real time (2); and, ultimately, I teach them how to transfer these new
+          skills to interact with computers or robotic limbs (3).
+        </p>
+        <img
+          src="assets/research.png"
+          alt="Research overview"
+          style="width: 80%; display: block; margin: 0.2rem auto"
+        />
+        <p class="more-link"><a href="research.html">See all projects and publications →</a></p>
+      </section>
+
+      <section id="code">
+        <h2>Code</h2>
+        <ul class="repo-grid">
+          <li class="repo-tile">
+            <h3>EMGsuite</h3>
+            <p>
+              Web-based acquisition and biofeedback suite for multi-channels EMG. Real-time
+              streaming, MVC calibration, pattern-based biofeedback, BIDS-compliant export.
+            </p>
+            <div class="tile-links">
+              <a href="https://github.com/simonavrillon/EMGsuite">GitHub →</a>
+              <a href="blog/?tag=emgsuite">Read posts →</a>
+            </div>
+          </li>
+          <li class="repo-tile">
+            <h3>MUedit2</h3>
+            <p>
+              Web-based app that decomposes EMG signals into individual motor unit pulse trains
+              using fastICA, with interactive editing of the decomposition output.
+            </p>
+            <div class="tile-links">
+              <a href="https://github.com/simonavrillon/MUedit2">GitHub →</a>
+              <a href="blog/?tag=muedit">Read posts →</a>
+            </div>
+          </li>
+          <li class="repo-tile">
+            <h3>I-Spin</h3>
+            <p>
+              Real-time motor unit identification for the OT Bioelettronica Quattrocento —
+              translating individual motor unit firings into visual feedback.
+            </p>
+            <div class="tile-links">
+              <a href="https://github.com/simonavrillon/I-Spin">GitHub →</a>
+              <a href="blog/?tag=i-spin">Read posts →</a>
+            </div>
+          </li>
+          <li class="repo-tile">
+            <h3>MUreplay</h3>
+            <p>
+              Lightweight replay app for MUedit2 editing sessions. Useful for reviewing
+              decomposition edits across students, collaborators, and published work.
+            </p>
+            <div class="tile-links">
+              <a href="https://github.com/simonavrillon/MUreplay">GitHub →</a>
+              <a href="blog/?tag=mureplay">Read posts →</a>
+            </div>
+          </li>
+        </ul>
+        <p class="more-link">
+          <a href="https://github.com/simonavrillon?tab=repositories"
+            >See all repositories on GitHub →</a
+          >
+        </p>
+      </section>
+
+      <section id="blog">
+        <h2>Blog</h2>
+        <p class="muted">No posts yet.</p>
+        <p class="more-link"><a href="blog/">See all posts →</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="mailto:simon.avrillon@univ-nantes.fr">simon.avrillon@univ-nantes.fr</a> ·
+        <a href="https://github.com/simonavrillon">GitHub</a> ·
+        <a href="https://scholar.google.com/citations?user=N3VrB_kAAAAJ&hl=fr">Scholar</a>
+      </p>
+      <p>
+        © <span id="year"></span> Simon Avrillon ·
+        <a href="https://github.com/simonavrillon/simonavrillon.github.io">Source</a>
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
