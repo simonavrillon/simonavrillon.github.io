@@ -1,1 +1,1 @@
-Personal website for Simon Avrillon
+Personal website
